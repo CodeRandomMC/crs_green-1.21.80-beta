@@ -1,0 +1,14 @@
+{
+  "format_version": "1.21.80",
+  "sound_definitions": {
+    "crop.lava_destroy": {
+      "category": "block",
+      "sounds": [
+        "sounds/block/sweet_berry_bush/break1",
+        "sounds/block/sweet_berry_bush/break2",
+        "sounds/block/sweet_berry_bush/break3",
+        "sounds/block/sweet_berry_bush/break4"
+      ]
+    }
+  }
+}

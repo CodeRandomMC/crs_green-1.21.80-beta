@@ -1,0 +1,22 @@
+{
+  "format_version": "1.21.70",
+  "minecraft:item": {
+    "description": {
+      "identifier": "crs_green:strawberry_seeds",
+      "menu_category": {
+        "category": "nature",
+        "group": "minecraft:itemGroup.name.seed"
+      }
+    },
+    "components": {
+      "minecraft:icon": "crs_green:strawberry_seeds",
+      "crs_green:seed_item": {
+        "block_that_can_sustain": "minecraft:farmland",
+        "placeable_direction": "up"
+      },
+      "minecraft:block_placer": {
+        "block": "crs_green:strawberry_crop"
+      }
+    }
+  }
+}

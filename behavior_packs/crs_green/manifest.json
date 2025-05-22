@@ -1,0 +1,35 @@
+{
+  "format_version": 2,
+  "header": {
+    "name": "Greenstead",
+    "description": "TypeScript Starter",
+    "uuid": "9b642f94-e86c-4037-8fd1-e1e377268a4e",
+    "version": [1, 0, 0],
+    "min_engine_version": [1, 21, 80]
+  },
+  "modules": [
+    {
+      "description": "Script resources",
+      "language": "javascript",
+      "type": "script",
+      "uuid": "59b29adb-a1da-4fbd-8199-26451ff4d621",
+      "version": [1, 0, 0],
+      "entry": "scripts/main.js"
+    }
+  ],
+  "dependencies": [
+    {
+      "module_name": "@minecraft/server",
+      "version": "2.0.0-beta"
+    },
+    {
+      "uuid": "4f354f79-3dfc-4daa-8d18-359b1dd32c87",
+      "version": [1, 0, 0]
+    }
+  ],
+  "metadata": {
+    "generated_with": {
+      "mctoolsweb": ["0.11.0"]
+    }
+  }
+}
