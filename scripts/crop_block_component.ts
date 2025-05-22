@@ -6,6 +6,7 @@ import {
   BlockCustomComponent,
   CustomComponentParameters,
   EquipmentSlot,
+  GameMode,
   Player,
   world,
 } from "@minecraft/server";
@@ -74,7 +75,7 @@ export class CropBlockComponent implements BlockCustomComponent {
 
     if (!mainHand.hasItem() || mainHand.typeId !== params.fertilize_item) return false;
 
-    if (player.getGameMode().toString() === "creative") {
+    if (player.getGameMode() == GameMode.Creative) {
       // Grow crop fully
       block.setPermutation(block.permutation.withState("crs_green:crop_age" as any, params.max_age - 1));
     } else {
