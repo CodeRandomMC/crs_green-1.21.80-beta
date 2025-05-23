@@ -21,9 +21,17 @@
     "enablemcpreviewloopback": "CheckNetIsolation.exe LoopbackExempt -a -p=S-1-15-2-424268864-5579737-879501358-346833251-474568803-887069379-4040235476"
   },
   "dependencies": {
-    "@minecraft/math": "^2.2.4",
-    "@minecraft/server": "^2.0.0-beta.1.21.82-stable",
-    "@minecraft/server-ui": "^2.0.0-beta.1.21.82-stable",
-    "@minecraft/vanilla-data": "^1.21.81"
+    "@minecraft/math": "2.2.4",
+    "@minecraft/server": "2.0.0-beta.1.21.82-stable",
+    "@minecraft/server-ui": "2.0.0-beta.1.21.82-stable",
+    "@minecraft/vanilla-data": "1.21.81"
+  },
+  "overrides": {
+    "@minecraft/math": {
+      "@minecraft/server": "2.0.0-beta.1.21.82-stable"
+    },
+    "@minecraft/server-ui": {
+      "@minecraft/server": "2.0.0-beta.1.21.82-stable"
+    }
   }
 }
