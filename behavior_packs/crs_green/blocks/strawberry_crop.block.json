@@ -13,6 +13,9 @@
       }
     },
     "components": {
+      "minecraft:destruction_particles": {
+        "texture": "crs_green:strawberry_crop_3"
+      },
       "minecraft:tick": {
         "interval_range": [20, 20],
         "looping": true
@@ -53,16 +56,12 @@
       {
         "condition": "q.block_state('crs_green:crop_age') < 7",
         "components": {
-          "crs_green:lava_detection": {
-            "on_lava_touches": "break"
-          },
           // Loot table for when the crop is not fully grown. Vanilla crops only drop seeds when young.
           "minecraft:loot": "loot_tables/blocks/strawberry_crop_young.json",
           // Trigger growth on random ticks and when interacting with bone meal (only active when the block isn't fully grown).
           "crs_green:crop": {
             "max_age": 8,
-            "use_random_tick": true,
-            "grow_on_tick_chance": 3,
+            "grow_on_tick_chance": 10,
             "fertilize_item": "minecraft:bone_meal"
           }
         }
@@ -174,7 +173,7 @@
         "components": {
           "minecraft:material_instances": {
             "*": {
-              "texture": "crs_green:strawberry_crop_3",
+              "texture": "crs_green:strawberry_crop_4",
               "render_method": "alpha_test_single_sided",
               "ambient_occlusion": false,
               "face_dimming": false

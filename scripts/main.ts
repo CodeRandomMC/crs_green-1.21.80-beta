@@ -1,6 +1,6 @@
 import { system, StartupEvent } from "@minecraft/server";
-import { LavaDetectionComponent } from "./lava_detection_component";
-import { CropBlockComponent } from "./crop_block_component";
+import { LavaDetectionComponent } from "./block_components/lava_detection_component";
+import { CropBlockComponent } from "./block_components/crop_block_component";
 
 system.beforeEvents.startup.subscribe((init: StartupEvent) => {
   // Register custom block components

@@ -18,9 +18,6 @@
     },
     "crs_green:strawberry_crop_4": {
       "textures": "textures/blocks/strawberry_4"
-    },
-    "crs_green:strawberry_crop_rotten": {
-      "textures": "textures/blocks/strawberry_5"
     }
   }
 }
