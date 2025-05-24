@@ -1,4 +1,4 @@
-import { Block } from "@minecraft/server";
+import { Block, World } from "@minecraft/server";
 import { BlockStateSuperset } from "@minecraft/vanilla-data";
 
 export enum CustomStateSet {
@@ -36,6 +36,7 @@ export class BlockStateUtils {
     } else if (typeof value === "string") {
       return value as string;
     } else if (typeof value === "boolean") {
+      World
       return value as boolean;
     } else {
       throw new Error(`Invalid state '${state_name}' at ${block.location.x}, ${block.location.y}, ${block.location.z}`);

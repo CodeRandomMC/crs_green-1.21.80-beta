@@ -8,7 +8,15 @@
       "minecraft:display_name": {
         "value": "item.crs_green:strawberry.name"
       },
-      "minecraft:icon": "crs_green:strawberry"
+      "minecraft:icon": "crs_green:strawberry",
+      "minecraft:use_modifiers": {
+        "use_duration": 32
+      },
+      "minecraft:use_animation": "eat",
+      "minecraft:food": {
+        "nutrition": 3,
+        "saturation_modifier": 0.6
+      }
     }
   }
 }

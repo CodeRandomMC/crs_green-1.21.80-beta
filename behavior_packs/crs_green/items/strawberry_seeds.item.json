@@ -9,6 +9,9 @@
       }
     },
     "components": {
+      "minecraft:display_name": {
+        "value": "item.crs_green:strawberry_seeds.name"
+      },
       "minecraft:icon": "crs_green:strawberry_seeds",
       "crs_green:seed_item": {
         "block_that_can_sustain": "minecraft:farmland",

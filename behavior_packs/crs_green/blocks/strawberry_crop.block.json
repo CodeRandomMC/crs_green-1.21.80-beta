@@ -13,15 +13,13 @@
       }
     },
     "components": {
-      "minecraft:destruction_particles": {
-        "texture": "crs_green:strawberry_crop_3"
-      },
+      // Required for lava detection
       "minecraft:tick": {
         "interval_range": [20, 20],
         "looping": true
       },
       "minecraft:collision_box": false,
-      "minecraft:geometry": "geometry.crop",
+      "minecraft:geometry": "geometry.crop_cross",
       "minecraft:light_dampening": 0,
 
       // What block can sustain this crop (e.g. "minecraft:farmland")
@@ -62,13 +60,18 @@
           "crs_green:crop": {
             "max_age": 8,
             "grow_on_tick_chance": 10,
-            "fertilize_item": "minecraft:bone_meal"
+            "fertilize_item": "minecraft:bone_meal",
+            "grow_period": "day",
+            "required_weather": "Rain"
           }
         }
       },
       {
         "condition": "q.block_state('crs_green:crop_age') >= 0",
         "components": {
+          "minecraft:destruction_particles": {
+            "texture": "crs_green:strawberry_crop_0"
+          },
           "minecraft:material_instances": {
             "*": {
               "texture": "crs_green:strawberry_crop_0",
@@ -100,6 +103,9 @@
       {
         "condition": "q.block_state('crs_green:crop_age') >= 2",
         "components": {
+          "minecraft:destruction_particles": {
+            "texture": "crs_green:strawberry_crop_1"
+          },
           "minecraft:material_instances": {
             "*": {
               "texture": "crs_green:strawberry_crop_1",
@@ -131,6 +137,9 @@
       {
         "condition": "q.block_state('crs_green:crop_age') >= 4",
         "components": {
+          "minecraft:destruction_particles": {
+            "texture": "crs_green:strawberry_crop_2"
+          },
           "minecraft:material_instances": {
             "*": {
               "texture": "crs_green:strawberry_crop_2",
@@ -171,6 +180,9 @@
       {
         "condition": "q.block_state('crs_green:crop_age') == 7",
         "components": {
+          "minecraft:destruction_particles": {
+            "texture": "crs_green:strawberry_crop_4"
+          },
           "minecraft:material_instances": {
             "*": {
               "texture": "crs_green:strawberry_crop_4",
