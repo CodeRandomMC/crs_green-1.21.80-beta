@@ -1,3 +1,13 @@
 {
-  "pools": []
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "item",
+          "name": "crs_green:strawberry_seeds"
+        }
+      ]
+    }
+  ]
 }

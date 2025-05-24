@@ -1,0 +1,14 @@
+{
+  "format_version": "1.21.60",
+  "minecraft:item": {
+    "description": {
+      "identifier": "crs_green:strawberry"
+    },
+    "components": {
+      "minecraft:display_name": {
+        "value": "item.crs_green:strawberry.name"
+      },
+      "minecraft:icon": "crs_green:strawberry"
+    }
+  }
+}

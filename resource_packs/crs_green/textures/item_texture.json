@@ -5,17 +5,11 @@
     "strawberry": {
       "textures": "textures/items/strawberry"
     },
-    "strawberry_rotten": {
-      "textures": "textures/items/strawberry_rotten"
-    },
     "crs_green:strawberry_seeds": {
       "textures": "textures/items/strawberry_seeds"
     },
-    "spray_can_empty": {
-      "textures": "textures/items/spray_can_empty"
-    },
-    "spray_can_full": {
-      "textures": "textures/items/spray_can_full"
+    "crs_green:strawberry": {
+      "textures": "textures/items/strawberry"
     }
   }
 }
