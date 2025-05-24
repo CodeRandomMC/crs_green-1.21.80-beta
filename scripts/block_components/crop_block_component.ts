@@ -42,6 +42,7 @@ export class CropBlockComponent implements BlockCustomComponent {
       // Consume item
       if (itemStack.amount > 1) {
         itemStack.amount--;
+        PlayerUtils.getEquipmentSlot(player, EquipmentSlot.Mainhand)?.setItem(itemStack);
       } else {
         PlayerUtils.getEquipmentSlot(player, EquipmentSlot.Mainhand)?.setItem(undefined);
       }
@@ -63,7 +64,6 @@ export class CropBlockComponent implements BlockCustomComponent {
     if (CropBlockUtils.getAge(event.block, params.max_age) === params.max_age - 1) {
       return;
     }
-    console.info(`fired`);
 
     // Retrieve custom fertilize item from component parameters
     const fertilizeItemID: string = params.fertilize_item ?? `minecraft:bone_meal`;
