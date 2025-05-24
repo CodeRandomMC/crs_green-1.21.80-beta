@@ -13,16 +13,21 @@
       }
     },
     "components": {
-      // Required for lava detection
       "minecraft:tick": {
         "interval_range": [20, 20],
         "looping": true
       },
+      "crs_green:crop": {
+        "max_age": 8,
+        "grow_on_tick_chance": 10,
+        "fertilize_item": "minecraft:bone_meal"
+      },
+      "crs_green:lava_detection": {
+        "on_lava_touches": "break"
+      },
       "minecraft:collision_box": false,
       "minecraft:geometry": "geometry.crop_cross",
       "minecraft:light_dampening": 0,
-
-      // What block can sustain this crop (e.g. "minecraft:farmland")
       "minecraft:placement_filter": {
         "conditions": [
           {
@@ -31,8 +36,6 @@
           }
         ]
       },
-
-      // Break the crop if water flows through it
       "minecraft:liquid_detection": {
         "detection_rules": [
           {
@@ -44,26 +47,30 @@
     },
     "permutations": [
       {
-        "condition": "q.block_state('crs_green:crop_age') <= 7",
+        "condition": "q.block_state('crs_green:crop_age') < 7",
         "components": {
-          "crs_green:lava_detection": {
-            "on_lava_touches": "break"
-          }
+          "minecraft:loot": "loot_tables/blocks/strawberry_crop_young.json"
         }
       },
       {
-        "condition": "q.block_state('crs_green:crop_age') < 7",
+        "condition": "q.block_state('crs_green:crop_age') == 7",
         "components": {
-          // Loot table for when the crop is not fully grown. Vanilla crops only drop seeds when young.
-          "minecraft:loot": "loot_tables/blocks/strawberry_crop_young.json",
-          // Trigger growth on random ticks and when interacting with bone meal (only active when the block isn't fully grown).
-          "crs_green:crop": {
-            "max_age": 8,
-            "grow_on_tick_chance": 10,
-            "fertilize_item": "minecraft:bone_meal",
-            "grow_period": "day",
-            "required_weather": "Rain"
-          }
+          "minecraft:destruction_particles": {
+            "texture": "crs_green:strawberry_crop_4"
+          },
+          "minecraft:material_instances": {
+            "*": {
+              "texture": "crs_green:strawberry_crop_4",
+              "render_method": "alpha_test_single_sided",
+              "ambient_occlusion": false,
+              "face_dimming": false
+            }
+          },
+          "minecraft:selection_box": {
+            "origin": [-8, 0, -8],
+            "size": [16, 12.8, 16]
+          },
+          "minecraft:loot": "loot_tables/blocks/strawberry_crop_mature.json"
         }
       },
       {
@@ -175,28 +182,6 @@
             "origin": [-8, 0, -8],
             "size": [16, 11.2, 16]
           }
-        }
-      },
-      {
-        "condition": "q.block_state('crs_green:crop_age') == 7",
-        "components": {
-          "minecraft:destruction_particles": {
-            "texture": "crs_green:strawberry_crop_4"
-          },
-          "minecraft:material_instances": {
-            "*": {
-              "texture": "crs_green:strawberry_crop_4",
-              "render_method": "alpha_test_single_sided",
-              "ambient_occlusion": false,
-              "face_dimming": false
-            }
-          },
-          "minecraft:selection_box": {
-            "origin": [-8, 0, -8],
-            "size": [16, 12.8, 16]
-          },
-          // Drop different loot when fully grown
-          "minecraft:loot": "loot_tables/blocks/strawberry_crop_mature.json"
         }
       }
     ]
